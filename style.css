@@ -97,6 +97,12 @@ a div:active {
   box-shadow: 0px 0px rgb(183, 124, 238);
 }
 
+@media (min-width: 1500px) {
+  main .profile img {
+    width: 250px;
+  }
+}
+
 @media (max-width: 900px) {
   main {
     width: 80%;
