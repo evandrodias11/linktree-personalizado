@@ -11,7 +11,6 @@ body {
   width: 100vw;
   height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
   background-image: url(Doubs.png);
   background-repeat: no-repeat;
@@ -19,6 +18,8 @@ body {
 }
 
 main {
+  margin-top: 20px;
+  height: 650px;
   background-color: rgb(255, 255, 255, 0.7);
   padding: 3rem;
   border-radius: 8px;
@@ -41,7 +42,7 @@ main div {
 }
 
 main .profile img {
-  width: 40%;
+  width: 55%;
   border-radius: 50%;
   box-shadow: 10px 6px rgba(97, 126, 240, 0.671);
   transition: all 0.5s ease;
@@ -54,7 +55,7 @@ main .profile img:hover {
 }
 
 main .profile h1 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bolder;
 }
 
@@ -101,6 +102,7 @@ a div:active {
     width: 80%;
     padding: 1.2rem;
     box-shadow: none;
+    height: 800px;
   }
 
   main:hover {
@@ -114,7 +116,7 @@ a div:active {
   }
 
   main .profile img {
-    width: 60%;
+    width: 50%;
   }
 
   main .profile img:hover {
@@ -128,6 +130,14 @@ a div:active {
 }
 
 @media (max-width: 400px) {
+  main {
+    height: 590px;
+  }
+
+  main .profile h1 {
+    font-size: 23px;
+  }
+
   main a div p span {
     display: none;
   }
