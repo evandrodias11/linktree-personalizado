@@ -13,9 +13,15 @@ collections:
         label: "Links"
         name: "links"
         fields:
-          - label: "Links"
-            name: "links"
-            widget: "list"
-            fields:
-              - { label: "Tipo", name: "type", widget: "string" } # Tipo do link (Instagram, WhatsApp, etc.)
-              - { label: "URL", name: "url", widget: "string" } # URL do link
+          - { label: "Instagram", name: "instagram", widget: "string" }
+          - {
+              label: "Número do WhatsApp",
+              name: "numeroWhatsapp",
+              widget: "string",
+            }
+          - {
+              label: "Catálogo do WhatsApp",
+              name: "catalogoWhatsapp",
+              widget: "string",
+            }
+          - { label: "Facebook", name: "facebook", widget: "string" }
