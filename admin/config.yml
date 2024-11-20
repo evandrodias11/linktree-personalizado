@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: main # Substitua pelo nome do branch principal do repositório
 
-media_folder: "assets/uploads" # Onde as imagens serão armazenadas no repositório
+media_folder: "assets" # Onde as imagens serão armazenadas no repositório
 public_folder: "/assets/uploads" # Onde as imagens serão acessíveis publicamente
 
 collections:
