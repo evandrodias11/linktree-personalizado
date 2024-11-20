@@ -61,10 +61,10 @@
       const data = await response.json();
 
       // Atualizando os links no HTML
-      document.getElementById('link-instagram').href = data.links.find(link => link.instagram)?.instagram || '#';
-      document.getElementById('link-numero-whatsapp').href = data.links.find(link => link.numeroWhatsapp)?.numeroWhatsapp || '#';
-      document.getElementById('link-catalogo-whatsapp').href = data.links.find(link => link.catalogoWhatsapp)?.catalogoWhatsapp || '#';
-      document.getElementById('link-facebook').href = data.links.find(link => link.facebook)?.facebook || '#';
+      document.getElementById('link-instagram').href = data.instagram || '#';
+      document.getElementById('link-numero-whatsapp').href = data.numeroWhatsapp || '#';
+      document.getElementById('link-catalogo-whatsapp').href = data.catalogoWhatsapp || '#';
+      document.getElementById('link-facebook').href = data.facebook || '#';
     } catch (error) {
       console.error('Erro ao carregar os links:', error);
     }
@@ -73,6 +73,7 @@
   // Chama a função para carregar os links assim que o script é executado
   loadLinks();
 </script>
+
 
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>
