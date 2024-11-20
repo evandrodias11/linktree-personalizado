@@ -1,0 +1,31 @@
+backend:
+  name: git-gateway
+  branch: main # Substitua pelo nome do branch principal do repositório
+
+media_folder: "assets/uploads" # Onde as imagens serão armazenadas no repositório
+public_folder: "/assets/uploads" # Onde as imagens serão acessíveis publicamente
+
+collections:
+  - name: "links"
+    label: "Links"
+    files:
+      - file: "content/links.json"
+        label: "Links"
+        name: "links"
+        fields:
+          - label: "Links"
+            name: "links"
+            widget: "list"
+            fields:
+              - { label: "Instagram", name: "instagram", widget: "string" }
+              - {
+                  label: "Número do WhatsApp",
+                  name: "numeroWhatsapp",
+                  widget: "string",
+                }
+              - {
+                  label: "Catálogo do WhatsApp",
+                  name: "catalogoWhatsapp",
+                  widget: "string",
+                }
+              - { label: "Facebook", name: "facebook", widget: "string" }

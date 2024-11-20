@@ -16,26 +16,26 @@
       <img src="assets/profile-img.png" alt="profile-image" />
       <h1>🌷 DandinhaLaços 🌼</h1>
     </div>    
-    <a href="https://www.instagram.com/dandinhalacos_da_leandra/" target="blank">
+    <a id="link-instagram" target="blank">
       <div class="Elo7">
         <img src="assets/insta-icon.png" alt="instagram-icon" />
         <p>Perfil do Instagram</p>
       </div>
     </a>
-    <a href="https://wa.me/5551991710442" target="blank">
+    <a id="link-numero-whatsapp"  target="blank">
       <div class="whatsapp">
         <img src="assets/wpp-icon.png" alt="wpp-icon" />
         <p>Fale comigo no Whatsapp !</span></p>
       </div>
     </a>
-    <a href="https://wa.me/c/555191710442" target="blank">
+    <a id="link-catalogo-whatsapp"  target="blank">
       <div class="whatsapp">
         <img src="assets/wpp-icon.png" alt="wpp-icon" />
         <img src="assets/store-icon.png" alt="store-icon" />
         <p>Catálogo do Whatsapp !</span></p>
       </div>
     </a>
-    <a href="https://www.facebook.com/dandinhalacos/" target="blank">
+    <a id="link-facebook"  target="blank">
       <div class="Facebook">
         <img src="assets/fb-icon.png" alt="fb-icon" />
         <p>Perfil do facebook</p>
@@ -43,5 +43,46 @@
     </a>
   </main>
 </body>
-
 </html>
+
+<script>
+  // Função para carregar os links do JSON e atualizar o HTML
+  async function loadLinks() {
+    try {
+      // Fazendo fetch no arquivo links.json
+      const response = await fetch('content/links.json');
+      
+      // Verifica se o arquivo foi carregado com sucesso
+      if (!response.ok) {
+        throw new Error(`Erro ao carregar os links: ${response.status}`);
+      }
+
+      // Converte o conteúdo do JSON para um objeto JavaScript
+      const data = await response.json();
+
+      // Atualizando os links no HTML
+      document.getElementById('link-instagram').href = data.links.find(link => link.instagram)?.instagram || '#';
+      document.getElementById('link-numero-whatsapp').href = data.links.find(link => link.numeroWhatsapp)?.numeroWhatsapp || '#';
+      document.getElementById('link-catalogo-whatsapp').href = data.links.find(link => link.catalogoWhatsapp)?.catalogoWhatsapp || '#';
+      document.getElementById('link-facebook').href = data.links.find(link => link.facebook)?.facebook || '#';
+    } catch (error) {
+      console.error('Erro ao carregar os links:', error);
+    }
+  }
+
+  // Chama a função para carregar os links assim que o script é executado
+  loadLinks();
+</script>
+
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", (user) => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
